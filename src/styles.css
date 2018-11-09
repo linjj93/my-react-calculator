@@ -114,3 +114,41 @@
   background-color: yellow;
 }
 
+
+@media only screen and (max-width : 320px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .title p {
+    margin: 1px;
+  }
+
+  .display {
+    height: 100px;
+    width: 200px;
+    font-size: 1.5rem;
+    margin-top: 2px;
+  }
+
+  .display p {
+    overflow: scroll;
+  }
+
+
+  .buttons-1, .buttons-2, .buttons-3, .buttons-4, .buttons-5 {
+    font-size: 0.5rem;
+    height: 200px;
+  }
+
+  .buttons-1 div, .buttons-2 div, .buttons-3 div, .buttons-4 div, .buttons-5 div {
+    font-size: 1rem;
+  }
+}
