@@ -116,7 +116,7 @@
 }
 
 
-@media only screen and (max-width : 500px) {
+@media only screen and (max-width : 320px) {
 
   .container {
     display: flex;
@@ -134,14 +134,14 @@
 
   .display {
     height: 100px;
-    width: 400px;
+    width: 300px;
     font-size: 1.5rem;
     margin-top: 2px;
   }
 
   .display p {
     overflow: hidden;
-    width: 385px;
+    width: 280px;
   }
 
 
