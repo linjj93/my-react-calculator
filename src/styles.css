@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Boogaloo|Patrick+Hand');
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+
+#root {
+  display: flex;
+  justify-content: center;
+  font-family: 'Boogaloo', cursive;
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0.4;
+  
+}
+
+
+.display {
+  border-top: groove black;
+  border-left: groove black;
+  border-right: groove black;
+  border-radius: 17px 17px 0 0;
+  margin-top: 80px;
+  flex-grow: 1;
+  width: 500px;
+  height: 150px;
+  font-size: 3rem;
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  background-color: grey;
+  overflow: hidden;
+
+}
+
+.display p {
+  margin: 10px;
+}
+
+.answer {
+  color: orange;
+}
+
+.buttons {
+  display: flex;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.buttons-1, .buttons-2, .buttons-3, .buttons-4, .buttons-5 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+.buttons-1 div, .buttons-2 div, .buttons-3 div, .buttons-4 div, .buttons-5 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: solid;
+  border-top: solid;
+  border-color: #1F2421;
+  font-size: 2.5rem;
+  background-color: gainsboro;
+  height: 75px;
+}
+
+.buttons-1 div:hover, .buttons-2 div:hover, .buttons-3 div:hover, .buttons-4 div:hover, .buttons-5 div:hover {
+  background-color: orange;
+}
+
+.equal-btn {
+  border-radius: 0 0 17px 0;
+  border-right: solid;
+}
+
+.AC-btn {
+  border-radius: 0 0 0 17px;
+
+}
+
+.buttons-1 .AC-btn:hover {
+  background-color: red;
+}
+
+.last-row {
+  border-bottom: solid;
+}
+
+.last-col {
+  border-right: solid;
+}
+
+.operators div:hover {
+  background-color: yellow;
+}
+
