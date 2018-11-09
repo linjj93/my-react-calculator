@@ -54,6 +54,7 @@
 
 .display p {
   margin: 10px;
+  width: 490px;
 }
 
 .answer {
@@ -115,7 +116,7 @@
 }
 
 
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 500px) {
 
   .container {
     display: flex;
@@ -133,22 +134,22 @@
 
   .display {
     height: 100px;
-    width: 200px;
+    width: 400px;
     font-size: 1.5rem;
     margin-top: 2px;
   }
 
   .display p {
-    overflow: scroll;
+    overflow: hidden;
+    width: 385px;
   }
 
 
   .buttons-1, .buttons-2, .buttons-3, .buttons-4, .buttons-5 {
-    font-size: 0.5rem;
-    height: 200px;
+    height: 300px;
   }
 
   .buttons-1 div, .buttons-2 div, .buttons-3 div, .buttons-4 div, .buttons-5 div {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
