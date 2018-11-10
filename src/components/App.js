@@ -23,44 +23,65 @@ class App extends Component {
   }
 
   buttonPress = (button) => {
-    if (button.textContent === '+' || button.textContent === '-' || button.textContent === '×' || button.textContent === '÷') {
-      if (this.state.evaluation) {
-        return;
-      } else {
+    //3 situations - starting from zero, after evaluated answer, or normal (without evaluation)
+    //handle starting condition
+    if (this.state.display === '0') {
+      if (button.textContent === '+' || button.textContent === '-' || button.textContent === '×' || button.textContent === '÷') {
+        this.setState(prevState => ({
+          display: prevState.display.toString() + button.textContent.toString()
+        })
+      )} else {
         this.setState({
+          display: button.textContent,
+          evaluation: null,
           currentNumberIsFloat: false
         })
-      }
-    }
-
-    if (!this.state.evaluation) {
-      let prevElement = this.state.display[this.state.display.length - 1];
-
-      if (!isNaN(prevElement)) {
-        if (this.state.restrictions['integer'].includes(button.textContent)) {
-          return;
+      } 
+    } else if (this.state.evaluation) {  //handle restart condition after evaluating expression
+        if (button.textContent === '+' || button.textContent === '-' || button.textContent === '×' || button.textContent === '÷') {
+          this.setState({
+            display: this.state.evaluation.slice(2) + button.textContent,
+            evaluation: null,
+            currentNumberIsFloat: false
+          })  //continue on from stored evaluation by keying in operator
+            
+        } else { //continue new calculation by keying in new number
+          this.setState({
+            display: button.textContent,
+            evaluation: null,
+            currentNumberIsFloat: false
+          })
         }
-      } else if (this.state.restrictions[prevElement].includes(button.textContent)) {
-        return;
-      } else if (prevElement === ')' && button.className === 'integer') {
-        return;
-      }
-    }
+      } else if (!this.state.evaluation) {
+          let prevElement = this.state.display[this.state.display.length - 1];
+          // 2 cases - last element is either a number or operator
+          if (!isNaN(prevElement)) {    //handle restrictions whenever new button is pressed after a number
+            if (this.state.restrictions['integer'].includes(button.textContent)) {
+              console.log("err1");
+              return;
+            }
 
+            else {
+              this.setState(prevState => ({
+              display: prevState.display.toString() + button.textContent.toString()
+              })
+            )}
+
+          } else if (this.state.restrictions[prevElement].includes(button.textContent)) {
+              return;
+
+          } else if (prevElement === ')' && button.className === 'integer') {
+              return;
+
+          } else {
+              this.setState(prevState => ({
+              display: prevState.display.toString() + button.textContent.toString()
+              })
+            )}
+          }
+        }
+          
     
-
-    if (this.state.evaluation || this.state.display === '0') {
-      this.setState({
-        display: button.textContent,
-        evaluation: null,
-        currentNumberIsFloat: false
-      })
-    } else {
-      this.setState(prevState => ({
-        display: prevState.display.toString() + button.textContent.toString()
-      })
-    )}
-  }
 
   decimalPress = () => {
     if (!this.state.currentNumberIsFloat) {
@@ -73,19 +94,20 @@ class App extends Component {
 
   resetDisplay = () => {
     this.setState({
+      zeroIsPlaceholder: true,
       display: '0',
       evaluation: null,
       currentNumberIsFloat: false
     })
   }
 
-  delete = () => {
-    let span = this.state.display;
+  
     //if deleting operator, check whether number from nearest operator to next nearest operator contains decimal
     //if contains, change floatstatus to True, else change to false
     //special case: delete last operator -> therefore left with a number with no other operator before interval
 
-
+  delete = () => {
+      let span = this.state.display;
     if (isNaN(span[span.length - 1])) {
       for (let i = span.length; i >= 0; i -= 1) {       //loop backwards from the element before the element to be deleted
         if (!isNaN(span.slice(0, span.length - 1))) {   //handle special case here
@@ -119,7 +141,8 @@ class App extends Component {
     }
     if (span.length === 1) {
       this.setState({
-        display: '0',
+        zeroIsPlaceholder: true,
+        display: '0'
       })
     } else {
       this.setState({
