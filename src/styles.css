@@ -11,17 +11,11 @@
 }
 
 
-
-#root {
-  display: flex;
-  justify-content: center;
-  font-family: 'Boogaloo', cursive;
-  font-size: 2rem;
-}
-
 .container {
   display: flex;
   justify-content: space-around;
+  font-family: 'Boogaloo', cursive;
+  font-size: 2rem;
 
 }
 
@@ -54,7 +48,9 @@
 
 .display p {
   margin: 10px;
-  width: 490px;
+  width: 95%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .answer {
