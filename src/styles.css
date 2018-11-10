@@ -10,6 +10,10 @@
                                   supported by Chrome and Opera */
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
 
 .container {
   display: flex;
@@ -119,6 +123,7 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 60px;
+    
   }
 
   .title {
@@ -144,6 +149,7 @@
   .buttons {
     width: 300px;
   }
+
   .buttons-1, .buttons-2, .buttons-3, .buttons-4, .buttons-5 {
     height: 300px;
   }
