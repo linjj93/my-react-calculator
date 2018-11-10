@@ -10,7 +10,7 @@ const NavBar = (props) => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" href="https://linjj93.github.io/index.html">Home<span class="sr-only">(current)</span></a>
           </li>
 
           <li class="nav-item dropdown">
@@ -18,8 +18,8 @@ const NavBar = (props) => {
               Personal Projects
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="hangman.html">Hangman (Version 2.0)</a>
-              <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker (Version 1.0)</a>
+              <a class="dropdown-item" href="https://linjj93.github.io/hangman.html">Hangman (Version 2.0)</a>
+              <a class="dropdown-item" href="https://linjj93.github.io/expenditure-tracker.html">Expenditure Tracker (Version 1.0)</a>
               <a class="dropdown-item" href="https://linjj93.github.io/my-react-calculator/">Calculator (Version 1.0)</a>
             </div>
           </li>          
