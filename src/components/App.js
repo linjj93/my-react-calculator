@@ -18,7 +18,7 @@ class App extends Component {
       '÷': ['÷', '+', '×', ')'],
       '(': ['+', '-', '×', '÷', ')'],
       ')': ['integer'],
-      '.': ['+', '-', '×', '÷', '(', ')']
+      '.': ['+', '-', '×', '÷', '(', ')','.']
     }
   }
 
@@ -57,15 +57,14 @@ class App extends Component {
           // 2 cases - last element is either a number or operator
           if (!isNaN(prevElement)) {    //handle restrictions whenever new button is pressed after a number
             if (this.state.restrictions['integer'].includes(button.textContent)) {
-              console.log("err1");
               return;
-            }
-
-            else {
-              this.setState(prevState => ({
-              display: prevState.display.toString() + button.textContent.toString()
-              })
-            )}
+            } else if (button.textContent === '.'){
+                this.decimalPress();
+            } else {
+                this.setState(prevState => ({
+                display: prevState.display.toString() + button.textContent.toString()
+                })
+              )}
 
           } else if (this.state.restrictions[prevElement].includes(button.textContent)) {
               return;
@@ -74,16 +73,29 @@ class App extends Component {
               return;
 
           } else {
-              this.setState(prevState => ({
+            this.setState(prevState => ({
               display: prevState.display.toString() + button.textContent.toString()
               })
             )}
+          }
+
+          if (button.textContent === '+' || button.textContent === '-' || button.textContent === '×' || button.textContent === '÷') {
+            this.setState({
+              currentNumberIsFloat: false,
+            })
           }
         }
           
     
 
   decimalPress = () => {
+    if (this.state.evaluation) {
+      this.setState({
+        display: '0',
+        evaluation: null,
+        currentNumberIsFloat: true
+      })
+    }
     if (!this.state.currentNumberIsFloat) {
       this.setState( prevState => ({
         display: prevState.display.toString() + '.',
