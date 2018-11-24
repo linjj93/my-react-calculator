@@ -36,7 +36,7 @@
   color: #f2f2f2;
   text-decoration: none;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 500;
   text-transform: uppercase;
   border-bottom: 5px solid #225fc1;
@@ -193,21 +193,18 @@
 
 
 
-@media only screen and (max-width : 500px) {
+@media only screen and (max-width : 768px) {
 
-  .body {
-    width: 80%;
-  }
 
   .topnav {
-    height: 5%;
+    height: 7.5%;
     width: 100%;
     position: fixed;
     top: 0;
     color: white;
     background-color: #333;
     z-index: 1;
-    text-align: justify;
+    text-align: center;
     vertical-align: middle;
     font-family: 'Montserrat', sans-serif;
     padding: 0.5%;
@@ -290,11 +287,21 @@
   }
 
   .display {
-    height: 100px;
-    width: 100%;
-    font-size: 1.5rem;
-    margin-top: 2px;
-    padding-right: 0;
+    border-top: solid black;
+    border-left: solid black;
+    border-right: solid black;
+    border-radius: 17px 17px 0 0;
+    margin-top: 5%;
+    flex-grow: 1;
+    width: 300px;
+    height: 150px;
+    font-size: 3rem;
+    color: white;
+    text-align: right;
+    padding-right: 15px;
+    background-color: grey;
+    overflow: hidden;
+  
   }
 
   .display p {
