@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Boogaloo|Patrick+Hand');
+@import url('https://fonts.googleapis.com/css?family=Boogaloo|Patrick+Hand|Montserrat|Work+Sans');
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -13,6 +13,81 @@
 #root {
   display: flex;
   justify-content: center;
+}
+
+
+.topnav {
+  left: 0;
+  height: 7.5%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: white;
+  background-color: #333;
+  z-index: 1;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5%;
+}
+
+#home, .dropdown-heading {
+  display: inline-block;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 5px solid #225fc1;
+  margin: 0 50px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  background: black;
+  text-align: center;
+  width: 100%;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 5px solid #225fc1;
+  margin: 0;
+}
+
+.dropdown-content, #learning {
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  background: black;
+  text-decoration: none;
+}
+
+.topnav a:hover, .dropdown-content a:hover, .dropdown:hover, .topnav #home:hover {
+  color: lightblue;
+  text-decoration: none;
 }
 
 .container {
@@ -34,9 +109,9 @@
 
 
 .display {
-  border-top: groove black;
-  border-left: groove black;
-  border-right: groove black;
+  border-top: solid black;
+  border-left: solid black;
+  border-right: solid black;
   border-radius: 17px 17px 0 0;
   margin-top: 80px;
   flex-grow: 1;
@@ -117,7 +192,84 @@
 }
 
 
+
 @media only screen and (max-width : 500px) {
+
+  .body {
+    width: 80%;
+  }
+
+  .topnav {
+    height: 5%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    color: white;
+    background-color: #333;
+    z-index: 1;
+    text-align: justify;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5%;
+  }
+
+  #home, .dropdown-heading {
+    display: inline-block;
+    color: #f2f2f2;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0 30px;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    background: black;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .dropdown-content a {
+    display: block;
+    color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0;
+  }
+
+  .dropdown-content, #learning {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    background: black;
+    text-decoration: none;
+  }
+
+  .topnav a:hover, .dropdown-content a:hover, .dropdown:hover, .topnav #home:hover {
+    color: lightblue;
+    text-decoration: none;
+  }
 
   .container {
     display: flex;
@@ -139,18 +291,19 @@
 
   .display {
     height: 100px;
-    width: 300px;
+    width: 100%;
     font-size: 1.5rem;
     margin-top: 2px;
+    padding-right: 0;
   }
 
   .display p {
     overflow: hidden;
-    width: 98%;
+    width: 100%;
   }
 
   .buttons {
-    width: 300px;
+    width: 100%;
   }
 
   .buttons-1, .buttons-2, .buttons-3, .buttons-4, .buttons-5 {
@@ -161,3 +314,4 @@
     font-size: 1.5rem;
   }
 }
+
