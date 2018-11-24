@@ -29,15 +29,26 @@
   vertical-align: middle;
   font-family: 'Montserrat', sans-serif;
   padding: 0.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
 }
 
-#home, .dropdown-heading {
+#home a{
+  text-decoration: none;
+  color: white;
+}
+
+#home a:hover {
+  color: lightblue; 
+}
+
+.dropdown-heading {
   display: inline-block;
   color: #f2f2f2;
   text-decoration: none;
   text-align: center;
-  font-size: 1em;
-  font-weight: 500;
   text-transform: uppercase;
   border-bottom: 5px solid #225fc1;
   margin: 0 50px;
@@ -95,6 +106,7 @@
   justify-content: space-around;
   font-family: 'Boogaloo', cursive;
   font-size: 2rem;
+  margin-top: 7.5%;
 
 }
 
@@ -103,7 +115,7 @@
   justify-content: center;
   flex-direction: column;
   flex: 0.4;
-  margin-top: 70px;
+
   
 }
 
@@ -113,7 +125,6 @@
   border-left: solid black;
   border-right: solid black;
   border-radius: 17px 17px 0 0;
-  margin-top: 80px;
   flex-grow: 1;
   width: 500px;
   height: 150px;
@@ -197,7 +208,7 @@
 
 
   .topnav {
-    height: 7.5%;
+    height: 5%;
     width: 100%;
     position: fixed;
     top: 0;
@@ -208,10 +219,15 @@
     vertical-align: middle;
     font-family: 'Montserrat', sans-serif;
     padding: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  #home, .dropdown-heading {
-    display: inline-block;
+  .dropdown-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #f2f2f2;
     text-decoration: none;
     text-align: center;
@@ -226,6 +242,7 @@
   .dropdown {
     display: inline-block;
     position: relative;
+    vertical-align: text-top;
   }
 
   .dropdown-content {
@@ -272,13 +289,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 10%;
     
   }
 
   .title {
     font-size: 1rem;
-    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -291,7 +307,6 @@
     border-left: solid black;
     border-right: solid black;
     border-radius: 17px 17px 0 0;
-    margin-top: 5%;
     flex-grow: 1;
     width: 300px;
     height: 150px;
