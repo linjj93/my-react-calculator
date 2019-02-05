@@ -9,7 +9,7 @@ const NavBar = (props) => {
         <div className = "dropdown-heading" id = "projects">Projects</div>
         <div className = "dropdown-content">
           <a href="https://linjj93.github.io/hangman.html">Hangman</a>
-          <a href="https://linjj93.github.io/expenditure-tracker.html">Expenditure Tracker</a>
+          <a href="https://linjj93.github.io/expense-tracker.html">Expense Tracker</a>
         </div>
       </div>
       
