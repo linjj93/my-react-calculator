@@ -188,14 +188,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className = "super-wrapper">
-        <div>
-          <NavBar />
-        </div>
-        
+      
         <div className = "container">
+          <NavBar />
           <div className = "title">
-          <p>Simple HTML Calculator</p>
+          <p>HTML Calculator</p>
           <p>Made with CSS Flexbox and ReactJS</p>
           </div>
           
@@ -216,7 +213,7 @@ class App extends Component {
           </div>
 
         </div>
-      </div>
+
 
     )
   }

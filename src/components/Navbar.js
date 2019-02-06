@@ -3,13 +3,17 @@ import React from 'react';
 const NavBar = (props) => {
   return (
     <div className = "topnav">
-      <a href="https://linjj93.github.io/index.html" id = "home">Home</a>
+      <div className = "dropdown">
+        <div className = "dropdown-heading" id = "home">
+          <a href="https://linjj93.github.io/index.html">Home</a>
+        </div>
+      </div>
   
       <div className = "dropdown">
         <div className = "dropdown-heading" id = "projects">Projects</div>
         <div className = "dropdown-content">
           <a href="https://linjj93.github.io/hangman.html">Hangman</a>
-          <a href="https://linjj93.github.io/expenditure-tracker.html">Expenditure Tracker</a>
+          <a href="https://linjj93.github.io/expense-tracker.html">Expense Tracker</a>
         </div>
       </div>
       
